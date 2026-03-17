@@ -1,7 +1,7 @@
 name: astrbot_plugin_discord_forwarder
 display_name: Discord Message Forwarder
-desc: Forward messages from one Discord channel to another, supporting text and images
-version: v1.0.0
+desc: Forward messages from Discord channels to other channels. Supports multiple forwarding rules for different Discord bot instances.
+version: v1.1.0
 author: Minara
 repo: https://github.com/minara-agent/astrbot_plugin_discord_forwarder
 support_platforms:

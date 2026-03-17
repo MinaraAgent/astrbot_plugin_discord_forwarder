@@ -5,40 +5,105 @@
     "default": true,
     "hint": "Toggle message forwarding on/off"
   },
+  "forward_rules": {
+    "type": "list",
+    "description": "List of forwarding rules",
+    "default": [],
+    "hint": "Configure multiple forwarding rules for different Discord bot instances",
+    "items": {
+      "type": "object",
+      "properties": {
+        "platform_id": {
+          "type": "string",
+          "description": "Discord platform ID",
+          "default": "discord",
+          "hint": "The Discord platform ID in AstrBot (e.g., 'discord', 'discord-b')"
+        },
+        "source_channel_id": {
+          "type": "string",
+          "description": "Source Discord Channel ID",
+          "default": "",
+          "hint": "The Discord channel ID to forward messages FROM"
+        },
+        "destination_channel_id": {
+          "type": "string",
+          "description": "Destination Discord Channel ID",
+          "default": "",
+          "hint": "The Discord channel ID to forward messages TO"
+        },
+        "forward_images": {
+          "type": "bool",
+          "description": "Forward images",
+          "default": true,
+          "hint": "Include images from forwarded messages"
+        },
+        "forward_text": {
+          "type": "bool",
+          "description": "Forward text content",
+          "default": true,
+          "hint": "Include text content from forwarded messages"
+        },
+        "include_sender_info": {
+          "type": "bool",
+          "description": "Include sender information",
+          "default": true,
+          "hint": "Add sender name and ID to forwarded messages"
+        },
+        "ignore_bot_messages": {
+          "type": "bool",
+          "description": "Ignore messages from bots",
+          "default": true,
+          "hint": "Skip forwarding messages sent by Discord bots"
+        },
+        "enabled": {
+          "type": "bool",
+          "description": "Enable this rule",
+          "default": true,
+          "hint": "Toggle this specific forwarding rule on/off"
+        }
+      }
+    }
+  },
+  "forward_from_platform_id": {
+    "type": "string",
+    "description": "[Legacy] Discord platform ID to forward from",
+    "default": "discord",
+    "hint": "[Legacy] Use 'forward_rules' instead. The Discord platform ID to forward messages FROM."
+  },
   "source_channel_id": {
     "type": "string",
-    "description": "Source Discord Channel ID",
+    "description": "[Legacy] Source Discord Channel ID",
     "default": "",
-    "hint": "The Discord channel ID to forward messages FROM. Enable Developer Mode in Discord and right-click the channel to copy the ID."
+    "hint": "[Legacy] Use 'forward_rules' instead. The Discord channel ID to forward messages FROM."
   },
   "destination_channel_id": {
     "type": "string",
-    "description": "Destination Discord Channel ID",
+    "description": "[Legacy] Destination Discord Channel ID",
     "default": "",
-    "hint": "The Discord channel ID to forward messages TO. Enable Developer Mode in Discord and right-click the channel to copy the ID."
+    "hint": "[Legacy] Use 'forward_rules' instead. The Discord channel ID to forward messages TO."
   },
   "forward_images": {
     "type": "bool",
-    "description": "Forward images",
+    "description": "[Legacy] Forward images",
     "default": true,
-    "hint": "Include images from forwarded messages"
+    "hint": "[Legacy] Use 'forward_rules' instead. Include images from forwarded messages"
   },
   "forward_text": {
     "type": "bool",
-    "description": "Forward text content",
+    "description": "[Legacy] Forward text content",
     "default": true,
-    "hint": "Include text content from forwarded messages"
+    "hint": "[Legacy] Use 'forward_rules' instead. Include text content from forwarded messages"
   },
   "include_sender_info": {
     "type": "bool",
-    "description": "Include sender information",
+    "description": "[Legacy] Include sender information",
     "default": true,
-    "hint": "Add sender name and ID to forwarded messages"
+    "hint": "[Legacy] Use 'forward_rules' instead. Add sender name and ID to forwarded messages"
   },
   "ignore_bot_messages": {
     "type": "bool",
-    "description": "Ignore messages from bots",
+    "description": "[Legacy] Ignore messages from bots",
     "default": true,
-    "hint": "Skip forwarding messages sent by Discord bots"
+    "hint": "[Legacy] Use 'forward_rules' instead. Skip forwarding messages sent by Discord bots"
   }
 }
