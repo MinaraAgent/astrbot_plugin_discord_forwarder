@@ -1,0 +1,44 @@
+{
+  "enabled": {
+    "type": "bool",
+    "description": "Enable or disable the message forwarder",
+    "default": true,
+    "hint": "Toggle message forwarding on/off"
+  },
+  "source_channel_id": {
+    "type": "string",
+    "description": "Source Discord Channel ID",
+    "default": "",
+    "hint": "The Discord channel ID to forward messages FROM. Enable Developer Mode in Discord and right-click the channel to copy the ID."
+  },
+  "destination_channel_id": {
+    "type": "string",
+    "description": "Destination Discord Channel ID",
+    "default": "",
+    "hint": "The Discord channel ID to forward messages TO. Enable Developer Mode in Discord and right-click the channel to copy the ID."
+  },
+  "forward_images": {
+    "type": "bool",
+    "description": "Forward images",
+    "default": true,
+    "hint": "Include images from forwarded messages"
+  },
+  "forward_text": {
+    "type": "bool",
+    "description": "Forward text content",
+    "default": true,
+    "hint": "Include text content from forwarded messages"
+  },
+  "include_sender_info": {
+    "type": "bool",
+    "description": "Include sender information",
+    "default": true,
+    "hint": "Add sender name and ID to forwarded messages"
+  },
+  "ignore_bot_messages": {
+    "type": "bool",
+    "description": "Ignore messages from bots",
+    "default": true,
+    "hint": "Skip forwarding messages sent by Discord bots"
+  }
+}

@@ -1,0 +1,9 @@
+name: astrbot_plugin_discord_forwarder
+display_name: Discord Message Forwarder
+desc: Forward messages from one Discord channel to another, supporting text and images
+version: v1.0.0
+author: Minara
+repo: https://github.com/minara-agent/astrbot_plugin_discord_forwarder
+support_platforms:
+  - discord
+astrbot_version: ">=4.16,<5"
