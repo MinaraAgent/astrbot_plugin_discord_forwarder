@@ -3,7 +3,7 @@ display_name: Discord Message Forwarder
 desc: Forward messages from Discord channels to other channels. Supports multiple forwarding rules for different Discord bot instances.
 version: v1.1.0
 author: Minara
-repo: https://github.com/minara-agent/astrbot_plugin_discord_forwarder
+repo: https://github.com/MinaraAgent/astrbot_plugin_discord_forwarder
 support_platforms:
   - discord
 astrbot_version: ">=4.16,<5"
