@@ -265,6 +265,9 @@ class DiscordForwarderPlugin(Star):
 
             if success:
                 logger.info("[DiscordForwarder] Message forwarded successfully")
+                # Stop event propagation to prevent other handlers (like LTM active reply)
+                # from processing this message on the forwarding bot
+                event.stop_event()
             else:
                 logger.warning(
                     "[DiscordForwarder] Failed to forward message - platform not found"
