@@ -34,7 +34,7 @@ class ForwardRule:
     "astrbot_plugin_discord_forwarder",
     "Minara",
     "Discord message forwarding plugin - forwards messages between channels",
-    "1.2.0",
+    "1.2.1",
 )
 class DiscordForwarderPlugin(Star):
     """Discord message forwarding plugin with support for multiple forwarding rules."""
@@ -229,7 +229,8 @@ class DiscordForwarderPlugin(Star):
                         logger.info(
                             f"[DiscordForwarder] Forwarding file: {file_name}, URL: {file_url}"
                         )
-                        chain.file(name=file_name, url=file_url)
+                        # MessageChain doesn't have a file() method, so we append directly
+                        chain.chain.append(File(name=file_name, url=file_url))
                         has_forwarded_content = True
                     else:
                         # Try to get file from local path
@@ -238,7 +239,11 @@ class DiscordForwarderPlugin(Star):
                             logger.info(
                                 f"[DiscordForwarder] Forwarding file: {file_name}, path: {file_path}"
                             )
-                            chain.file(name=file_name, url=file_path)
+                            # Check if it's a URL or local path
+                            if file_path.startswith("http://") or file_path.startswith("https://"):
+                                chain.chain.append(File(name=file_name, url=file_path))
+                            else:
+                                chain.chain.append(File(name=file_name, file=file_path))
                             has_forwarded_content = True
                         else:
                             logger.warning(
