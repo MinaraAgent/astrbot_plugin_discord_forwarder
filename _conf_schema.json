@@ -44,6 +44,12 @@
             "default": true,
             "hint": "Include text content from forwarded messages"
           },
+          "forward_files": {
+            "description": "Forward files (videos, documents, etc.)",
+            "type": "bool",
+            "default": true,
+            "hint": "Include file attachments (MP4, PDF, etc.) from forwarded messages"
+          },
           "include_sender_info": {
             "description": "Include sender information",
             "type": "bool",
@@ -95,6 +101,12 @@
     "description": "[Legacy] Forward text content",
     "default": true,
     "hint": "[Legacy] Use 'forward_rules' instead. Include text content from forwarded messages"
+  },
+  "forward_files": {
+    "type": "bool",
+    "description": "[Legacy] Forward files (videos, documents, etc.)",
+    "default": true,
+    "hint": "[Legacy] Use 'forward_rules' instead. Include file attachments from forwarded messages"
   },
   "include_sender_info": {
     "type": "bool",

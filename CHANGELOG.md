@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2025-03-20
+
+### Added
+- **File attachment forwarding support**: Forward file attachments (MP4, PDF, documents, etc.) along with messages
+- `forward_files` configuration option to enable/disable file forwarding per rule
+- Support for all file types supported by Discord (videos, documents, audio files, etc.)
+
+### Changed
+- Updated `/forward_status` command to display file forwarding status
+- Improved error handling and logging for file forwarding
+
 ## [1.1.0] - 2025-03-17
 
 ### Added
